@@ -1,5 +1,4 @@
 # April Wednesday Study 스터디 내용
----
 
 > 모든 작업은 NodeJS가 설치 되어있어야 합니다.  ([NodeJS 설치하러가기](https://nodejs.org))
 
