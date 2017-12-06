@@ -1,0 +1,74 @@
+/* 초기 Reset */
+body { padding: 0; margin: 0; background-color: #F2F4F7; }
+
+/* header */
+div.header { display: flex; flex-direction: column; height: 217px; background-color: #FFF; border-bottom: 1px solid #D1D8E4; }
+
+div.header div.section { position: relative; width: 1080px; margin: 0 auto; flex: 1; }
+
+/*
+  transform: translate - 다음과 같이 absolute로 top을 50%를 주면 div의 윗부분을 기준으로 하기때문에 정확하게 가운데로 오지 않습니다.  이때 margin-top을 height의 1/2 한 값을 마이너스 해주면 되지만 height값이 변할 때마다
+                         같이 변경해주는 번거로움을 없애기 위해 transfrom: translateY(-50%)를 하여 별도의 위치이동을 높이의 -50%를 합니다.  즉 height의 높을 바꿔도 자동으로 가운데로 맞춰집니다. ( position: absolute를 가두기 위해 상위는 relative 속성이어야합니다. )
+*/
+div.header div.section div.area { position: absolute; top: 50%; left: 0; transform: translateY(-50%); display: flex; width: 743px; height: 57px; }
+div.header div.section div.area div.logo { flex-basis: 202px; height: 57px; background-image: url('./images/naver.png'); background-size: cover; background-repeat: no-repeat; }
+div.header div.section div.area div.search { position: relative; flex: 1; height: 45px; padding: 0 10px; margin: 6px 0; border: 2px solid #1EC545; box-sizing: border-box; }
+/* ::after - 별도의 DOM을 제작하지 않고 CSS로 뒤에 오는 가상의 DOM을 제작합니다. */
+div.header div.section div.area div.search::after { position: absolute; top: -2px; right: -2px; content: ''; display: block; width: 45px; height: 45px;  background: url('./images/naver-search.png') #1EC545; background-size: 22px 22px; background-position: center; background-repeat: no-repeat; }
+
+/* calc() - 계산을 할 수 있게 해주는 것으로 보통 퍼센트와 픽셀계산을 할 수 없지만 다음과 같이 사용하면 가능합니다. */
+div.header div.section div.area div.search input { width: 100%; height: calc(100% - 2px); border: none; font-size: 15px; font-weight: 700; outline: 0; }
+
+div.header div.section ul.top_menu { position: absolute; top: 10px; right: 0; display: flex; list-style: none; padding: 0; margin: 0; }
+div.header div.section ul.top_menu li { padding: 0 5px; font-size: 12px; color: grey; cursor: pointer; }
+div.header div.section ul.top_menu li:hover { color: #1CBB41; }
+
+div.header div.menu { flex-basis: 46px; border-top: 1px solid #F1F3F6; }
+
+div.header div.menu ul.list { display: flex; list-style: none; width: 1080px; padding: 0; margin: 0 auto; height: 46px; line-height: 46px; box-sizing: border-box; }
+
+/* header - 메뉴 */
+div.header div.menu ul.list li.item { font-weight: 700; cursor: pointer; }
+/* :not() - 제외 */
+/* :nth-last-child(-n+2) - 뒤에서 2개 */
+/* li.item 중에 뒤에서 2개를 제외 */
+div.header div.menu ul.list li.item:not(:nth-last-child(-n+2)) { padding: 0 8px; font-weight: 700; }
+/* li.item 중에 뒤에서 2개만 */
+div.header div.menu ul.list li.item:nth-last-child(-n+2) { flex: 1; font-weight: 700; }
+/* :nth-child(-n+7) - 앞에서 7개 */
+div.header div.menu ul.list li.item:nth-child(-n+7) { color: #1CBB41; }
+
+
+/* container */
+div.container { display: flex; width: 1080px; min-height: 1000px; margin: 0 auto; }
+
+div.container div.left { display: flex; flex-direction: column; flex: 1; margin: 10px 5px 10px 0; }
+
+div.container div.left div { margin: 5px 5px 5px 0; background-color: #FFF; border: 1px solid #DEE3EB; box-sizing: border-box; }
+div.container div.left div:first-child { margin-top: 0; }
+div.container div.left div:last-child { margin-bottom: 0; }
+div.container div.left div.left-content1 { flex-basis: 120px; }
+div.container div.left div.left-content2 { flex-basis: 46px; }
+div.container div.left div.left-content3 { flex-basis: 246px; }
+div.container div.left div.left-content4 { flex-basis: 837px; }
+div.container div.left div.left-content5 { flex-basis: 130px; }
+
+div.container div.right { display: flex; flex-direction: column; flex-basis: 332px; margin: 10px 0 10px 5px; }
+
+div.container div.right div { margin: 5px 0 5px 5px; background-color: #FFF; border: 1px solid #DEE3EB; box-sizing: border-box; }
+div.container div.right div:first-child { margin-top: 0; }
+div.container div.right div:last-child { margin-bottom: 0; }
+div.container div.right div.right-content1 { flex-basis: 120px; }
+div.container div.right div.right-content2 { flex-basis: 142px; }
+div.container div.right div.right-content3 { flex-basis: 150px; }
+div.container div.right div.right-content4 { flex-basis: 837px; }
+div.container div.right div.right-content5 { flex-basis: 130px; }
+
+
+/* footer */
+div.footer { height: 313px; background-color: #FFF; border-top: 1px solid #D1D8E4; }
+
+div.footer div.notice { border-bottom: 1px solid #F1F3F6; }
+div.footer div.notice div.notice-content { display: flex; justify-content: space-between; width: 1080px; height: 46px; line-height: 46px; margin: 0 auto; font-size: .8em; font-weight: 600; }
+div.footer div.notice div.notice-content > div span { cursor: pointer; }
+div.footer div.notice div.notice-content > div span:hover { text-decoration: underline; }
