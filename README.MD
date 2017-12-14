@@ -4,10 +4,8 @@
 
 #### Front-End 스터디 내용
 1. [2017-11-29] javascript 배열 다루는 6가지 방법
-2. [2017-12-06] html + css로 네이버 디자인 따라하기 1
-3. [2017-12-13] html + css로 네이버 디자인 따라하기 2 (예정)
-4. [2017-12-27] 디자인된 네이버 클론을 Vue로 재 디자인 ( Component화 ) (예정)
-5. [2018-01-03] 네이버 클론에 기능 넣기 (예정)
+2. [2017-12-06] html + css로 네이버 디자인 따라하기 ( CSS등의 내용은 Vue 네이버 클론 제작에 포함시킴으로써 폐기 )
+3. [2017-12-13] Vue로 네이버 클론 제작 ( Component화 )
 
 
 #### VueJS - 제작중
@@ -25,8 +23,8 @@
 $ cd javascript-array-control
 $ node index.js
 
-# html + css로 네이버 디자인 따라하기 (Window에서는 index.html 파일을 그냥 여세요.)
-$ cd naver-clone
-$ open index.html
+# Vue-Naver-Clone
+$ cd vue-naver-clone
+$ npm run dev
 
 ```
